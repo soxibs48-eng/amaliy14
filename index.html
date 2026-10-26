@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remmy — Finally Get the Answers Needed for Healthy Skin</title>
+  <meta name="description" content="Personalized, dermatologist-backed skincare regimens built with clinical science, daily routine tracking, and expert support.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%233b59ff'%3E%3Crect width='32' height='32' rx='8' fill='%233b59ff'/%3E%3Cpath d='M10 23V9h6.5a4.5 4.5 0 0 1 3.2 7.7L22 23h-3.6l-2-6h-3.4v6H10zm3-9h3.5a1.5 1.5 0 1 0 0-3H13v3z' fill='%23fff'/%3E%3C/svg%3E">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Remmy — Continuous Care for Healthy Skin">
+  <meta property="og:description" content="Evidence-based skincare routines tailored to your unique skin barrier.">
+  <meta property="og:type" content="website">
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===================================================================
+       HEADER / NAVBAR
+       =================================================================== -->
+  <header class="navbar" id="mainNavbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo" aria-label="Remmy Home">
+        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="10" fill="#3B59FF"/>
+          <path d="M12 26V10H19C21.7614 10 24 12.2386 24 15C24 16.98 22.84 18.69 21.18 19.5L25 26H20.8L17.5 20H15.5V26H12ZM15.5 17H19C20.1046 17 21 16.1046 21 15C21 13.8954 20.1046 13 19 13H15.5V17Z" fill="#FFFFFF"/>
+        </svg>
+        <span>Remmy</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#how-it-works" class="nav-link">How it works</a></li>
+          <li><a href="#routine" class="nav-link">Routine</a></li>
+          <li><a href="#science" class="nav-link">Science & Data</a></li>
+          <li><a href="#community" class="nav-link">Community</a></li>
+          <li><a href="#conditions" class="nav-link">Conditions</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn-secondary trigger-quiz-btn" id="navQuizBtn">Skin Quiz</button>
+        <button class="btn-primary trigger-quiz-btn" id="navGetAppBtn">Get the app</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================
+       HERO SECTION
+       =================================================================== -->
+  <section class="hero" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span>✨</span>
+          <span>Next-Generation Skincare Intelligence</span>
+        </div>
+        <h1 class="hero-title">Finally get the answers needed for healthy skin</h1>
+        <p class="hero-subtitle">Personalized, continuous skincare regimens built with clinical dermatological expertise, daily tracking, and a supportive community.</p>
+
+        <form class="hero-form lead-capture-form" id="heroLeadForm">
+          <input type="text" class="hero-input" placeholder="Enter your phone or email..." required aria-label="Phone or Email">
+          <button type="submit" class="hero-form-btn">Get the app</button>
+        </form>
+
+        <div class="hero-guarantee">
+          <span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Dermatologist Approved
+          </span>
+          <span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Free Skin Analysis
+          </span>
+          <span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Zero Guesswork
+          </span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-image-wrapper">
+          <img src="assets/images/hero-woman.jpg" alt="Woman with clear healthy glowing skin" width="440" height="480">
+          
+          <!-- Floating Glassmorphism Waveform Banner from Figma -->
+          <div class="glass-pill-player" id="heroPillCard">
+            <button class="pill-play-btn" id="heroPlayBtn" aria-label="Play Skin Audio Note">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </button>
+            <div class="pill-waveform" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <span class="pill-text" id="heroPillText">Skin Analysis: Day 21 Review</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       FEATURE 1: BUILD A ROUTINE THAT ACTUALLY WORKS
+       =================================================================== -->
+  <section class="section-feature" id="routine">
+    <div class="container feature-grid">
+      <!-- Phone Mockup: Daily Routine -->
+      <div class="feature-mockup">
+        <div class="phone-mockup">
+          <div class="phone-island"><div class="phone-camera"></div></div>
+          <div class="phone-screen">
+            <div class="phone-header">
+              <span class="phone-time">9:41 AM</span>
+              <span class="phone-pill-tab" id="routineProgressBadge">3/5 Done</span>
+            </div>
+            <h3 class="phone-title" style="margin-bottom: 14px;">Today's Routine</h3>
+
+            <!-- Morning Protocol -->
+            <div class="routine-box">
+              <div class="routine-box-header">
+                <span>☀️ MORNING REGIMEN</span>
+                <span style="color:#10b981;font-size:0.7rem;">Active</span>
+              </div>
+
+              <label class="routine-item completed">
+                <input type="checkbox" class="routine-checkbox" checked>
+                <div class="routine-info">
+                  <div class="routine-name">Gentle Gel Cleanser</div>
+                  <div class="routine-time">Step 1 • pH 5.5 Barrier Balance</div>
+                </div>
+              </label>
+
+              <label class="routine-item completed">
+                <input type="checkbox" class="routine-checkbox" checked>
+                <div class="routine-info">
+                  <div class="routine-name">10% Niacinamide Serum</div>
+                  <div class="routine-time">Step 2 • Pore & Sebum Control</div>
+                </div>
+              </label>
+
+              <label class="routine-item completed">
+                <input type="checkbox" class="routine-checkbox" checked>
+                <div class="routine-info">
+                  <div class="routine-name">HydraShield SPF 50+</div>
+                  <div class="routine-time">Step 3 • UV & Blue Light Defense</div>
+                </div>
+              </label>
+            </div>
+
+            <!-- Evening Protocol -->
+            <div class="routine-box">
+              <div class="routine-box-header">
+                <span>🌙 NIGHT PROTOCOL</span>
+                <span style="color:#64748b;font-size:0.7rem;">Tonight</span>
+              </div>
+
+              <label class="routine-item">
+                <input type="checkbox" class="routine-checkbox">
+                <div class="routine-info">
+                  <div class="routine-name">Ceramide Barrier Cream</div>
+                  <div class="routine-time">Step 1 • Deep Overnight Hydration</div>
+                </div>
+              </label>
+
+              <label class="routine-item">
+                <input type="checkbox" class="routine-checkbox">
+                <div class="routine-info">
+                  <div class="routine-name">Micro-Dosed Retinal (0.05%)</div>
+                  <div class="routine-time">Step 2 • Gentle Cell Renewal</div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Content -->
+      <div class="feature-content">
+        <span class="section-tag">Daily Tracking</span>
+        <h2 class="section-title">Build a routine that actually works</h2>
+        <p class="section-desc">Forget guessing which serums interact or buying products that sit unused in your bathroom cabinet. Remmy designs an evidence-based morning and evening protocol tailored specifically to your unique skin barrier biology.</p>
+
+        <div class="feature-quote">
+          <p>"Remmy eliminated the trial-and-error that had been damaging my skin for years. The structured daily regimen is what dermatologists have always dreamed patients could follow at home."</p>
+          <span>— Dr. Alexis Cole, MD • Board-Certified Dermatologist</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       HOW IT WORKS (3-STEP TIMELINE)
+       =================================================================== -->
+  <section class="section-steps" id="how-it-works">
+    <div class="container">
+      <div class="steps-header">
+        <span class="section-tag">How Remmy Works</span>
+        <h2 class="section-title">Discover your customized routine, step by step</h2>
+        <p class="section-desc" style="margin: 0 auto;">No complicated jargon. Just a clear, clinical methodology that evolves alongside your skin's healing journey.</p>
+      </div>
+
+      <div class="steps-timeline">
+        <!-- Step 1 -->
+        <div class="step-card">
+          <div class="step-text">
+            <div class="step-badge">1</div>
+            <h3 class="step-title">Scan your skin & share your habits</h3>
+            <p class="step-desc">Upload a quick selfie in natural lighting and answer 5 simple questions about your climate, stress levels, and lifestyle. Our dermatological AI maps moisture density, redness zones, and texture variance in under 60 seconds.</p>
+          </div>
+          <div class="step-visual">
+            <div class="phone-mockup" style="height: 480px;">
+              <div class="phone-island"><div class="phone-camera"></div></div>
+              <div class="phone-screen" style="padding-top: 36px;">
+                <div class="phone-header">
+                  <span class="phone-title" style="font-size:0.9rem;">Skin Scan Analysis</span>
+                  <span class="phone-pill-tab">AI Live</span>
+                </div>
+                <div class="scan-camera-view">
+                  <img src="assets/images/hero-woman.jpg" alt="Skin scanning preview">
+                  <div class="scan-grid-overlay"></div>
+                  <div class="scan-tag-floating">Barrier: 94% Intact</div>
+                </div>
+                <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:10px;font-size:0.75rem;">
+                  <div style="font-weight:700;color:#0f172a;margin-bottom:4px;">Diagnostic Detection</div>
+                  <div style="color:#64748b;">Mild T-zone congestion, healthy hydration gradient, 0% active inflammation.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-card reverse">
+          <div class="step-text">
+            <div class="step-badge">2</div>
+            <h3 class="step-title">Receive your tailored regimen</h3>
+            <p class="step-desc">Receive active ingredients matched to your skin's tolerance. We select synergistic formulas—like pairing hyaluronic acid with biomimetic ceramides—to ensure zero irritation while maximizing active absorption.</p>
+          </div>
+          <div class="step-visual">
+            <div class="phone-mockup" style="height: 480px;">
+              <div class="phone-island"><div class="phone-camera"></div></div>
+              <div class="phone-screen" style="padding-top: 36px;">
+                <div class="phone-header">
+                  <span class="phone-title" style="font-size:0.9rem;">Formulation Match</span>
+                  <span class="phone-pill-tab">Custom</span>
+                </div>
+                <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:14px;padding:14px;margin-bottom:12px;">
+                  <div style="font-size:0.72rem;font-weight:800;color:#1e40af;">PRESCRIPTION COMPLEX #41</div>
+                  <div style="font-size:0.95rem;font-weight:800;color:#0f172a;margin:4px 0;">Barrier Fortifying Duo</div>
+                  <div style="font-size:0.75rem;color:#475569;">Ceramides 3:1:1 + Niacinamide 4% + Centella</div>
+                </div>
+                <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:12px;">
+                  <div style="font-size:0.75rem;font-weight:700;color:#0f172a;margin-bottom:6px;">Expected Timeline</div>
+                  <div style="font-size:0.72rem;color:#64748b;line-height:1.5;">Day 7: Calmed redness<br>Day 14: Restored lipid moisture<br>Day 28: Full cellular turnover</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card">
+          <div class="step-text">
+            <div class="step-badge">3</div>
+            <h3 class="step-title">Track progress and adapt as skin changes</h3>
+            <p class="step-desc">Skin is dynamic. Seasonal humidity drops, hormone shifts, or travel alter your barrier needs. Remmy checks in daily and automatically shifts your formula to keep your results steady all year long.</p>
+          </div>
+          <div class="step-visual">
+            <div class="phone-mockup" style="height: 480px;">
+              <div class="phone-island"><div class="phone-camera"></div></div>
+              <div class="phone-screen" style="padding-top: 36px;">
+                <div class="phone-header">
+                  <span class="phone-title" style="font-size:0.9rem;">Skin Progress</span>
+                  <span class="phone-pill-tab" style="background:#ecfdf5;color:#059669;">+42% Growth</span>
+                </div>
+                <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:12px;margin-bottom:12px;">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                    <span style="font-size:0.75rem;font-weight:700;">Barrier Health Score</span>
+                    <span style="font-size:1.1rem;font-weight:800;color:#3b59ff;">94 / 100</span>
+                  </div>
+                  <div style="width:100%;height:8px;background:#f1f5f9;border-radius:4px;overflow:hidden;">
+                    <div style="width:94%;height:100%;background:#3b59ff;border-radius:4px;"></div>
+                  </div>
+                </div>
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:12px;font-size:0.75rem;color:#475569;">
+                  <strong>Dermatologist Note:</strong> "Inflammation has completely subsided. You are ready to increase retinol to 3x per week."
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       EDITORIAL TESTIMONIAL CALLOUT
+       =================================================================== -->
+  <section class="section-testimonial">
+    <div class="container testimonial-container">
+      <blockquote class="testimonial-quote">
+        “I've spent years guessing what my skin needed until Remmy gave me clarity, science, and true results in just 3 weeks.”
+      </blockquote>
+
+      <div class="testimonial-author">
+        <img src="assets/images/avatar-sarah.jpg" alt="Sarah Jenkins" class="author-avatar" width="56" height="56">
+        <div class="author-meta">
+          <div class="author-name">Sarah Jenkins</div>
+          <div class="author-role">Verified Member • Sensitive & Acne-Prone Skin</div>
+          <div class="author-stars" aria-label="5 stars rating">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       FEATURE 2: TRACK YOUR IMPROVEMENT (DATA GRAPH)
+       =================================================================== -->
+  <section class="section-feature" id="science" style="background:#f8fafc;">
+    <div class="container feature-grid">
+      <!-- Phone Mockup: Interactive Chart -->
+      <div class="feature-mockup">
+        <div class="phone-mockup">
+          <div class="phone-island"><div class="phone-camera"></div></div>
+          <div class="phone-screen">
+            <div class="phone-header">
+              <span class="phone-time">9:41 AM</span>
+              <span class="phone-pill-tab">Live Data</span>
+            </div>
+            <h3 class="phone-title" style="margin-bottom: 12px;">Skin Analytics</h3>
+
+            <div class="chart-box">
+              <div class="chart-header">
+                <div>
+                  <div style="font-size:0.68rem;color:#64748b;">BARRIER SCORE</div>
+                  <div class="chart-score" id="chartScoreVal">94/100</div>
+                </div>
+                <div style="display:flex;gap:4px;">
+                  <button class="chart-toggle-btn active" data-range="7D">7D</button>
+                  <button class="chart-toggle-btn" data-range="30D">30D</button>
+                  <button class="chart-toggle-btn" data-range="90D">90D</button>
+                </div>
+              </div>
+
+              <!-- Interactive SVG Trend Graph -->
+              <svg class="chart-svg-container" viewBox="0 0 290 130">
+                <defs>
+                  <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#3B59FF" stop-opacity="0.25"/>
+                    <stop offset="100%" stop-color="#3B59FF" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <!-- Grid Lines -->
+                <line x1="10" y1="30" x2="280" y2="30" stroke="#f1f5f9" stroke-width="1"/>
+                <line x1="10" y1="70" x2="280" y2="70" stroke="#f1f5f9" stroke-width="1"/>
+                <line x1="10" y1="110" x2="280" y2="110" stroke="#f1f5f9" stroke-width="1"/>
+                <!-- Fill Polygon -->
+                <polygon id="chartFill" fill="url(#chartGrad)" points="10,90 60,82 110,65 160,55 210,40 260,25 280,18 280,120 10,120"/>
+                <!-- Stroke Polyline -->
+                <polyline id="chartPolyline" fill="none" stroke="#3B59FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points="10,90 60,82 110,65 160,55 210,40 260,25 280,18"/>
+                <!-- Indicator Dot -->
+                <circle cx="280" cy="18" r="4.5" fill="#3B59FF" stroke="#ffffff" stroke-width="2"/>
+              </svg>
+            </div>
+
+            <div class="stat-pills">
+              <div class="stat-pill">
+                <div class="stat-pill-num">-64%</div>
+                <div class="stat-pill-label">Redness & Irritation</div>
+              </div>
+              <div class="stat-pill">
+                <div class="stat-pill-num">+89%</div>
+                <div class="stat-pill-label">Moisture Retention</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Content -->
+      <div class="feature-content">
+        <span class="section-tag">Data & Clinical Accuracy</span>
+        <h2 class="section-title">Track your improvement with real measurements</h2>
+        <p class="section-desc">Skin changes are subtle before they become obvious in the mirror. Remmy's computer vision and daily biometric logs highlight micro-progress before the naked eye spots it.</p>
+
+        <ul class="feature-bullets">
+          <li class="feature-bullet">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Weekly dermatologist-verified photo comparison</strong> with localized pigmentation & barrier checks.</span>
+          </li>
+          <li class="feature-bullet">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Climate & humidity adaptation alerts</strong> that prevent cold-weather dryness or summer breakouts.</span>
+          </li>
+          <li class="feature-bullet">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Interactive correlation index</strong> showing which active ingredients yield your highest recovery rate.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       FEATURE 3: TREATMENTS THAT ACTUALLY WORK (GAUGES)
+       =================================================================== -->
+  <section class="section-feature">
+    <div class="container feature-grid reverse">
+      <!-- Feature Content -->
+      <div class="feature-content">
+        <span class="section-tag">Clinical Formulations</span>
+        <h2 class="section-title">Treatments that actually work</h2>
+        <p class="section-desc">No marketing hype, no 12-step marketing gimmicks. We curate pure, medical-grade active molecules at exact concentrations proven by peer-reviewed dermatology literature to reverse barrier distress.</p>
+
+        <div class="stats-grid-row">
+          <div class="stat-metric">
+            <div class="stat-metric-val">94%</div>
+            <div class="stat-metric-desc">Users report visibly reduced breakout frequency</div>
+          </div>
+          <div class="stat-metric">
+            <div class="stat-metric-val">3.8x</div>
+            <div class="stat-metric-desc">Faster barrier recovery than standard OTC creams</div>
+          </div>
+          <div class="stat-metric">
+            <div class="stat-metric-val">100%</div>
+            <div class="stat-metric-desc">Fragrance-free, paraben-free & non-comedogenic</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phone Mockup: Circular Progress Gauges -->
+      <div class="feature-mockup">
+        <div class="phone-mockup">
+          <div class="phone-island"><div class="phone-camera"></div></div>
+          <div class="phone-screen">
+            <div class="phone-header">
+              <span class="phone-time">9:41 AM</span>
+              <span class="phone-pill-tab">Efficacy</span>
+            </div>
+            <h3 class="phone-title" style="margin-bottom: 14px;">Clinical Verification</h3>
+
+            <!-- Dual Animated SVG Circular Gauges -->
+            <div class="gauges-container">
+              <div class="gauge-item">
+                <div class="gauge-circle-wrap">
+                  <svg>
+                    <circle cx="37" cy="37" r="33" fill="none" stroke="#eff6ff" stroke-width="6"/>
+                    <circle id="circleHydration" cx="37" cy="37" r="33" fill="none" stroke="#06b6d4" stroke-width="6" stroke-dasharray="207" stroke-dashoffset="207" stroke-linecap="round" style="transition: stroke-dashoffset 1.5s cubic-bezier(0.16,1,0.3,1);"/>
+                  </svg>
+                  <div class="gauge-val">92%</div>
+                </div>
+                <span class="gauge-label">Hydration Index</span>
+              </div>
+
+              <div class="gauge-item">
+                <div class="gauge-circle-wrap">
+                  <svg>
+                    <circle cx="37" cy="37" r="33" fill="none" stroke="#eff6ff" stroke-width="6"/>
+                    <circle id="circleBarrier" cx="37" cy="37" r="33" fill="none" stroke="#8b5cf6" stroke-width="6" stroke-dasharray="207" stroke-dashoffset="207" stroke-linecap="round" style="transition: stroke-dashoffset 1.5s cubic-bezier(0.16,1,0.3,1);"/>
+                  </svg>
+                  <div class="gauge-val">88%</div>
+                </div>
+                <span class="gauge-label">Lipid Barrier</span>
+              </div>
+            </div>
+
+            <!-- Formulation Cards -->
+            <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:12px;margin-bottom:8px;">
+              <div style="font-size:0.75rem;font-weight:700;color:#0f172a;">Active Molecule Ratio</div>
+              <div style="font-size:0.7rem;color:#64748b;margin-top:2px;">Ceramide NP (3%) + Hyaluronic Multi-Weight (2%)</div>
+            </div>
+
+            <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:12px;">
+              <div style="font-size:0.75rem;font-weight:700;color:#0f172a;">Tolerance Profile</div>
+              <div style="font-size:0.7rem;color:#10b981;font-weight:600;margin-top:2px;">✓ 0% Reported Contact Sensitization</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       FEATURE 4: COMMUNITY & EXPERTS AT YOUR BACK (CHAT MOCKUP)
+       =================================================================== -->
+  <section class="section-feature" id="community" style="background:#f8fafc;">
+    <div class="container feature-grid">
+      <!-- Phone Mockup: Interactive Chat with Doctor -->
+      <div class="feature-mockup">
+        <div class="phone-mockup">
+          <div class="phone-island"><div class="phone-camera"></div></div>
+          <div class="phone-screen">
+            <div class="phone-header">
+              <span class="phone-time">9:41 AM</span>
+              <span class="phone-pill-tab" style="background:#ecfdf5;color:#059669;">Dr. Vance Online</span>
+            </div>
+            <h3 class="phone-title" style="margin-bottom: 12px;">Expert Consult</h3>
+
+            <div class="chat-window" id="chatMessages" style="height: 340px; overflow-y: auto;">
+              <div class="chat-bubble doctor">
+                <div class="chat-doctor-header">
+                  <span>Dr. Emily Vance</span>
+                  <span class="chat-doctor-badge">Dermatology MD</span>
+                </div>
+                <div>Hi Sarah! I reviewed your Day 21 photo scan. The erythema around your t-zone is calming nicely. Let's start the evening barrier peptide tonight.</div>
+              </div>
+
+              <div class="chat-bubble user">
+                Should I apply the peptide before or after my moisturizer?
+              </div>
+
+              <div class="chat-bubble doctor">
+                <div class="chat-doctor-header">
+                  <span>Dr. Emily Vance</span>
+                  <span class="chat-doctor-badge">Dermatology MD</span>
+                </div>
+                <div>Apply 3-4 drops directly before your moisturizer while skin is still slightly damp. You're doing amazing!</div>
+              </div>
+            </div>
+
+            <!-- Interactive Chat Input -->
+            <form class="chat-input-bar" id="chatForm">
+              <input type="text" id="chatInput" placeholder="Ask Dr. Vance a question..." required>
+              <button type="submit" aria-label="Send Message">➤</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Content -->
+      <div class="feature-content">
+        <span class="section-tag">Community & Expert Access</span>
+        <h2 class="section-title">A community of true professionals at your back</h2>
+        <p class="section-desc">Never feel alone or confused on your skincare journey again. Get instant direct access to board-certified dermatologists, licensed medical estheticians, and a warm community of members sharing real advice.</p>
+
+        <ul class="feature-bullets">
+          <li class="feature-bullet">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Unlimited asynchronous Q&A</strong> with licensed dermatologists.</span>
+          </li>
+          <li class="feature-bullet">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Moderated private community groups</strong> organized by skin concern and age group.</span>
+          </li>
+          <li class="feature-bullet">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Emergency flare-up protocols</strong> when travel or seasonal weather causes unexpected irritation.</span>
+          </li>
+        </ul>
+
+        <!-- App Store Download Badges from Figma -->
+        <div class="app-badges">
+          <a href="#" class="badge-btn trigger-quiz-btn" aria-label="Download on App Store">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.76 1.04-1.82.92-2.87-.9.04-2 .6-2.64 1.36-.57.65-1.06 1.73-.93 2.76 1 .08 2.03-.49 2.65-1.25z"/></svg>
+            <div class="badge-text">
+              <span class="badge-small">Download on the</span>
+              <span class="badge-bold">App Store</span>
+            </div>
+          </a>
+
+          <a href="#" class="badge-btn trigger-quiz-btn" aria-label="Get it on Google Play">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186c-.366-.37-.61-.915-.61-1.554V3.368c0-.64.244-1.185.61-1.554zM15.207 13.414l2.45 2.45-12.793 7.377 10.343-9.827zm2.45-5.278l-2.45 2.45L4.864.76l12.793 7.376zm1.186 1.185l2.766 1.595c.783.452.783 1.189 0 1.641l-2.766 1.595-2.072-2.415 2.072-2.416z"/></svg>
+            <div class="badge-text">
+              <span class="badge-small">GET IT ON</span>
+              <span class="badge-bold">Google Play</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       MISSION SECTION (MAN BEAUTY PORTRAIT & CLINICAL PROMISES)
+       =================================================================== -->
+  <section class="section-mission">
+    <div class="container">
+      <div class="mission-header">
+        <span class="section-tag">Our Mission</span>
+        <h2 class="section-title">Healthy skin is something everyone deserves</h2>
+        <p class="section-desc" style="margin: 0 auto;">We are dismantling the prohibitive expense and guesswork of traditional dermatology by delivering continuous, customized care to every skin tone and texture.</p>
+      </div>
+
+      <div class="mission-grid">
+        <div class="mission-visual">
+          <div class="mission-card">
+            <img src="assets/images/mission-man.jpg" alt="Man with healthy hydrated skin" width="420" height="460">
+            <!-- Floating Glassmorphism Badge -->
+            <div class="glass-pill-player" style="bottom: 24px;">
+              <div class="pill-play-btn" style="background:#10b981;color:#fff;">✓</div>
+              <div class="pill-waveform" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <span class="pill-text">100% Dermatologist Verified</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mission-promises">
+          <div class="promise-card">
+            <div class="promise-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="promise-content">
+              <h4>Dermatologist Approved</h4>
+              <p>Every active formula, interaction checker, and recommendation is formulated and supervised by board-certified dermatologists.</p>
+            </div>
+          </div>
+
+          <div class="promise-card">
+            <div class="promise-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2v7.31L4.62 18.5A2 2 0 0 0 6.36 21h11.28a2 2 0 0 0 1.74-2.5L14 9.31V2"/></svg>
+            </div>
+            <div class="promise-content">
+              <h4>Customized to Your Biology</h4>
+              <p>Formulated around your specific sebum profile, barrier thickness, daily UV index, and seasonal humidity.</p>
+            </div>
+          </div>
+
+          <div class="promise-card">
+            <div class="promise-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
+            </div>
+            <div class="promise-content">
+              <h4>Inclusive for All Skin Tones</h4>
+              <p>Rigorous clinical testing across Fitzpatrick types I through VI ensures high potency with zero hyperpigmentation risk.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       CONDITIONS WE SUPPORT (INTERACTIVE GRID)
+       =================================================================== -->
+  <section class="section-conditions" id="conditions">
+    <div class="container">
+      <div class="conditions-header">
+        <span class="section-tag">Conditions & Concerns</span>
+        <h2 class="section-title">What skin conditions do we support?</h2>
+        <p class="section-desc" style="margin: 0 auto;">Click on any skin concern below to preview Remmy's clinically targeted care protocol:</p>
+      </div>
+
+      <div class="conditions-grid">
+        <!-- 1. Acne -->
+        <div class="condition-card cond-acne" data-condition="acne">
+          <div class="condition-icon-badge">🌱</div>
+          <div>
+            <div class="condition-name">Acne & Blemishes</div>
+            <div class="condition-sub">Sebum & P. acnes control</div>
+          </div>
+        </div>
+
+        <!-- 2. Rosacea -->
+        <div class="condition-card cond-rosacea" data-condition="rosacea">
+          <div class="condition-icon-badge">💧</div>
+          <div>
+            <div class="condition-name">Rosacea & Flushing</div>
+            <div class="condition-sub">Capillary vascular relief</div>
+          </div>
+        </div>
+
+        <!-- 3. Eczema -->
+        <div class="condition-card cond-eczema" data-condition="eczema">
+          <div class="condition-icon-badge">✨</div>
+          <div>
+            <div class="condition-name">Eczema & Atopic</div>
+            <div class="condition-sub">Lipid barrier recovery</div>
+          </div>
+        </div>
+
+        <!-- 4. Psoriasis -->
+        <div class="condition-card cond-psoriasis" data-condition="psoriasis">
+          <div class="condition-icon-badge">🌿</div>
+          <div>
+            <div class="condition-name">Psoriasis & Scaling</div>
+            <div class="condition-sub">Keratolytic balance</div>
+          </div>
+        </div>
+
+        <!-- 5. Melasma -->
+        <div class="condition-card cond-melasma" data-condition="melasma">
+          <div class="condition-icon-badge">☀️</div>
+          <div>
+            <div class="condition-name">Melasma & Spots</div>
+            <div class="condition-sub">Tyrosinase inhibition</div>
+          </div>
+        </div>
+
+        <!-- 6. Dryness -->
+        <div class="condition-card cond-dryness" data-condition="dryness">
+          <div class="condition-icon-badge">🌊</div>
+          <div>
+            <div class="condition-name">Chronic Dryness</div>
+            <div class="condition-sub">72-hr NMF hydration</div>
+          </div>
+        </div>
+
+        <!-- 7. Aging -->
+        <div class="condition-card cond-aging" data-condition="aging">
+          <div class="condition-icon-badge">⏳</div>
+          <div>
+            <div class="condition-name">Aging & Lines</div>
+            <div class="condition-sub">Pro-collagen firming</div>
+          </div>
+        </div>
+
+        <!-- 8. Pores -->
+        <div class="condition-card cond-pores" data-condition="pores">
+          <div class="condition-icon-badge">🎯</div>
+          <div>
+            <div class="condition-name">Pores & Blackheads</div>
+            <div class="condition-sub">Gentle PHA refinement</div>
+          </div>
+        </div>
+
+        <!-- 9. Redness -->
+        <div class="condition-card cond-redness" data-condition="redness">
+          <div class="condition-icon-badge">🛡️</div>
+          <div>
+            <div class="condition-name">Sensitivity & SOS</div>
+            <div class="condition-sub">Micro-crack sealing</div>
+          </div>
+        </div>
+
+        <!-- 10. All Others -->
+        <div class="condition-card cond-other" data-condition="other">
+          <div class="condition-icon-badge">🔬</div>
+          <div>
+            <div class="condition-name">All Other Concerns</div>
+            <div class="condition-sub">Bespoke consult match</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       FOOTER
+       =================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="#" class="brand-logo" aria-label="Remmy Home">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="10" fill="#3B59FF"/>
+            <path d="M12 26V10H19C21.7614 10 24 12.2386 24 15C24 16.98 22.84 18.69 21.18 19.5L25 26H20.8L17.5 20H15.5V26H12ZM15.5 17H19C20.1046 17 21 16.1046 21 15C21 13.8954 20.1046 13 19 13H15.5V17Z" fill="#FFFFFF"/>
+          </svg>
+          <span>Remmy</span>
+        </a>
+
+        <ul class="footer-links">
+          <li><a href="#how-it-works" class="footer-link">How it works</a></li>
+          <li><a href="#routine" class="footer-link">Daily Routine</a></li>
+          <li><a href="#science" class="footer-link">Clinical Science</a></li>
+          <li><a href="#community" class="footer-link">Dermatologists</a></li>
+          <li><a href="#conditions" class="footer-link">Skin Guide</a></li>
+        </ul>
+
+        <div class="footer-socials">
+          <a href="#" class="social-icon-btn" aria-label="Twitter">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="social-icon-btn" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="social-icon-btn" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Remmy Health, Inc. All rights reserved. • Medical grade skincare algorithms.</div>
+        <div style="display:flex;gap:18px;">
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Terms of Service</a>
+          <a href="#" class="footer-link">Clinical Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================
+       MODAL 1: CONDITIONS DETAILS MODAL
+       =================================================================== -->
+  <div class="modal-backdrop" id="conditionModalBackdrop">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="condModalClose" aria-label="Close Modal">✕</button>
+      <div class="modal-step-tag">Clinical Protocol Details</div>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+        <span style="font-size:1.8rem;" id="condModalIcon">🌱</span>
+        <h3 class="modal-title" id="condModalTitle" style="margin-bottom:0;">Condition Title</h3>
+      </div>
+      <p class="modal-desc" id="condModalDesc">Condition description and dermatological mechanism.</p>
+      
+      <div style="font-size:0.85rem;font-weight:700;color:#0f172a;margin-bottom:8px;">Targeted Active Ingredients:</div>
+      <ul id="condModalActives" style="list-style:none;margin-bottom:24px;font-size:0.85rem;color:#475569;"></ul>
+
+      <button class="btn-primary trigger-quiz-btn" style="width:100%;">Get Personalized Treatment Plan</button>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       MODAL 2: 3-STEP SKIN ASSESSMENT QUIZ
+       =================================================================== -->
+  <div class="modal-backdrop" id="quizModalBackdrop">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="quizCloseBtn" aria-label="Close Quiz">✕</button>
+      <div class="modal-step-tag">Step 1 of 3 • Diagnostic</div>
+      <h3 class="modal-title">What is your primary skin focus?</h3>
+      <p class="modal-desc">Select your main focus so our clinical engine can personalize your morning and night protocol.</p>
+
+      <div class="quiz-options">
+        <div class="quiz-option selected">Acne & Breakouts</div>
+        <div class="quiz-option">Redness & Rosacea</div>
+        <div class="quiz-option">Dryness & Barrier</div>
+        <div class="quiz-option">Aging & Fine Lines</div>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <label style="display:block;font-size:0.8rem;font-weight:700;color:#0f172a;margin-bottom:6px;">Your Email or Phone</label>
+        <input type="text" placeholder="name@example.com" style="width:100%;padding:12px 16px;border:1px solid #cbd5e1;border-radius:10px;font-size:0.9rem;">
+      </div>
+
+      <button class="btn-primary" id="quizSubmitBtn" style="width:100%;">Generate My Regimen</button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
